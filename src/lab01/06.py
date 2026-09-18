@@ -1,12 +1,10 @@
-n = int(input('Введите число: '))
-cnt = 0
+n = int(input('in_1: '))
 ochno = 0
 zaochno = 0
-while cnt < n:
-    s = list(input().split())
-    cnt+=1
+for i in range(n):
+    s = input(f'in_{i + 2}: ').split()
     if s[3] == 'True':
-        ochno+=1
+        ochno += 1
     else:
-        zaochno+=1
-print(ochno, zaochno)
+        zaochno += 1
+print(f'out: {ochno} {zaochno}')
