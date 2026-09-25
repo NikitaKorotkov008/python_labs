@@ -6,6 +6,10 @@ def format_record(rec: tuple[str, str, float]) -> str:
     TypeError
     Далее формируеются данные для строки вывода и все)
     '''
+    if type(rec) is not tuple:
+        raise ValueError('Должен быть кортеж')
+    if len(rec) != 3:
+        raise ValueError('Длина должна быть 3')
     fio, group, gpa = rec
     if len(list(fio.split())) not in range(2,4):
         raise ValueError('Не та длинна фио')
@@ -17,10 +21,6 @@ def format_record(rec: tuple[str, str, float]) -> str:
         raise ValueError('GPA должен быть в диапозоне от 0.0 до 5.0')
     if len(group) == 0:
         raise ValueError('Пустая группа')
-    if type(rec) is not tuple:
-        raise ValueError('Долэен быть кортеж')
-    if len(rec) != 3:
-        raise ValueError('Длина должна быть 3')
     if type(group) is not str:
         raise ValueError('Группа должна быть строкой ')
     fio = list(fio.strip().split())
@@ -35,7 +35,6 @@ def format_record(rec: tuple[str, str, float]) -> str:
     else :
         initials+=str(fio[1][0].upper()+'.')
     return f'"{surname}{initials}, гр. {group}, GPA {gpa:.2f}"'
-
 
 print(format_record(("Иванов Иван Иванович", "BIVT-25", 4.6)))
 print(format_record(("Петров Пётр", "IKBO-12", 5.0)))
