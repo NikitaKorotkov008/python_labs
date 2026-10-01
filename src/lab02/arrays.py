@@ -4,7 +4,13 @@ def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
     '''
     if len(nums) == 0:
         raise ValueError("Список не должен быть пустым")
-    return (min(nums), max(nums))
+    mn = mx = nums[0]
+    for x in nums[1:]:
+        if x < mn:
+            mn = x
+        elif x > mx:
+            mx = x
+    return (mn, mx)
 
 
 def unique_sorted(nums: list[float | int]) -> list[float | int]:
