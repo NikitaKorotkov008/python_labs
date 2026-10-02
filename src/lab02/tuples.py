@@ -27,7 +27,7 @@ def format_record(rec: tuple[str, str, float]) -> str:
     flag = False 
     if len(fio) == 3:
         flag = True
-    surname = fio[0].capitalize()+'.'
+    surname = fio[0].capitalize()+' '
     initials = ''
     if flag:
         initials+=str(fio[1][0].upper()+'.')
