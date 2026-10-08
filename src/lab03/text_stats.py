@@ -8,3 +8,6 @@ print(f"Уникальных слов: {len(freq)}")
 print("Топ-5:")
 for word, count in top_n(freq):
     print(f"{word}:{count}")
+
+
+
