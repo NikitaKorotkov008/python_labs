@@ -1,3 +1,4 @@
+import sys
 from src.lab03.text import top_n
 from src.lab04.io_txt_csv import read_text, write_csv
 from collections import Counter
@@ -20,13 +21,13 @@ try:
     text = read_text(args.input_path, encoding=args.encoding)
 except FileNotFoundError:
     print('Файл не найден')
-else:
-    text_frequencies_from_text = frequencies_from_text(text)
-    text_sorted_word_count = sorted_word_counts(text_frequencies_from_text)
+    sys.exit(1)
+text_frequencies_from_text = frequencies_from_text(text)
+text_sorted_word_count = sorted_word_counts(text_frequencies_from_text)
 
-    write_csv(text_sorted_word_count, args.output_path, header=('word', 'count'))
+write_csv(text_sorted_word_count, args.output_path, header=('word', 'count'))
 
-
+if __name__ == '__main__':
     print("Всего слов:", sum(text_frequencies_from_text.values()))
     print("Уникальных слов:", len(text_frequencies_from_text))
     print("Топ-5:")
