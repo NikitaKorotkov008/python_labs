@@ -23,10 +23,10 @@ pip install -r requirements.txt
 
 ```bash
 # JSON -> CSV и CSV -> JSON
-python src/lab05/json_csv.py
+python -m src.lab05.json_csv
 
 # CSV -> XLSX
-python src/lab05/csv_xlsx.py
+python -m src.lab05.csv_xlsx
 ```
 
 ---

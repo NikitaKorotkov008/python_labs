@@ -41,7 +41,7 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
     if file.suffix != '.csv':
          raise ValueError('Файл должен быть .csv')
 
-    with open(file, encoding='utf-8') as f:
+    with open(file, encoding='utf-8', newline='') as f:
         i = csv.DictReader(f)
         data = list(i)
         if not i.fieldnames:

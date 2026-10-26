@@ -11,7 +11,7 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
     if file.suffix != '.csv':
         raise ValueError('Файл не .csv')
 
-    with open(file, encoding='utf-8') as f:
+    with open(file, encoding='utf-8', newline='') as f:
         reader = csv.reader(f)
         data = list(reader)
 
