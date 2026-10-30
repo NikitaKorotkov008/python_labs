@@ -10,7 +10,7 @@ def cat(path: str, number: bool) -> None:
     with file.open(encoding = 'utf-8') as f:
         number_line = 1
         for line in f:
-            line = line.strip()
+            line = line.strip('\n')
             if number: 
                 print(number_line, line)
             else:
