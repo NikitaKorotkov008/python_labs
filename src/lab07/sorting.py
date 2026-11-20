@@ -1,5 +1,5 @@
 def bubble_sort(nums):
-    """Пузырьковая сортировка: новый список, исходный не меняется. O(n²)."""
+    """Пузырьковая сортировка"""
     cop = list(nums)
     for i in range(len(cop) - 1):
         for j in range(len(cop) - 1 - i):
@@ -8,7 +8,7 @@ def bubble_sort(nums):
     return cop
 
 def insertion_sort(nums):
-    """Сортировка вставками: новый список, исходный не меняется. O(n²) в худшем случае."""
+    """Сортировка вставками"""
     cop = list(nums)
     for i in range(1, len(cop)):
         key = cop[i]
@@ -22,7 +22,7 @@ def insertion_sort(nums):
     return cop
 
 def selection_sort(nums):
-    """Сортировка выбором: новый список, исходный не меняется. O(n²)."""
+    """Сортировка выбором"""
     cop = list(nums)
     for i in range(len(nums)):
         min_index = i

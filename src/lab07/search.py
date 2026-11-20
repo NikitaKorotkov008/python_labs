@@ -1,5 +1,5 @@
 def linear_search(nums, x):
-    """Индекс первого вхождения x или -1. Время O(n)."""
+    """Индекс первого вхождения x или -1"""
     for i in range(len(nums)):
         if nums[i] == x:
             return i
@@ -7,8 +7,7 @@ def linear_search(nums, x):
         return -1
 
 def binary_search(sorted_nums, x):
-    """Индекс любого вхождения x или -1. Время O(log n).
-
+    """Индекс любого вхождения x или -1
     Список должен быть отсортирован по возрастанию.
     На неотсортированном списке результат не определён.
     """
@@ -25,7 +24,7 @@ def binary_search(sorted_nums, x):
     return -1
 
 def two_sum_brute(nums, target):
-    """Пара индексов (i, j), i < j, с суммой target или None. Время O(n²)."""
+    """Пара индексов (i, j), i < j, с суммой target или None"""
     for i in range(len(nums)):
         for j in range(i+1, len(nums)):
             if nums[i] + nums[j] == target:
@@ -34,9 +33,7 @@ def two_sum_brute(nums, target):
     return None
 
 def two_sum_fast(nums, target):
-    """Пара индексов (i, j), i < j, с суммой target или None.
-
-    Один проход со словарём: в среднем O(n) времени и O(n) памяти.
+    """Пара индексов (i, j), i < j, с суммой target или None
     """
     num = {}
     for i in range(len(nums)):
